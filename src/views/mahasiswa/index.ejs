@@ -26,10 +26,28 @@
         <td class="p-2"><%= m.nim %></td>
         <td class="p-2 text-center">
           <a href="/mahasiswa/edit/<%= m.id %>" class="bg-yellow-400 text-white px-3 py-1 rounded">Edit</a>
-          <a href="/mahasiswa/delete/<%= m.id %>" onclick="return confirm('Yakin hapus?')" class="bg-red-500 text-white px-3 py-1 rounded">Hapus</a>
+          <button onclick="confirmDelete('/mahasiswa/delete/<%= m.id %>')" class="bg-red-500 text-white px-3 py-1 rounded">Hapus</button>
         </td>
       </tr>
       <% }) %>
     </tbody>
   </table>
 </div>
+<script>
+function confirmDelete(url) {
+  Swal.fire({
+    icon: 'warning',
+    title: 'Yakin?',
+    text: 'Data akan dihapus permanen!',
+    showCancelButton: true,
+    confirmButtonColor: '#e3342f',
+    cancelButtonColor: '#6c757d',
+    confirmButtonText: 'Ya, hapus!',
+    cancelButtonText: 'Cancel'
+  }).then((result) => {
+    if (result.isConfirmed) {
+      window.location.href = url;
+    }
+  });
+}
+</script>
