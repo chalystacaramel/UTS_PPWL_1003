@@ -4,5 +4,5 @@
   "service": "app",
   "workspaceFolder": "/workspace",
   "forwardPorts": [3000, 8080],
-  "postCreateCommand": "curl -fsSL https://bun.sh/install | bash && source ~/.bashrc && bun install && bunx prisma generate"
+  "postCreateCommand": "curl -fsSL https://bun.sh/install | bash && source ~/.bashrc && bun install && echo 'DATABASE_URL=\"mysql://root:root@mysql:3306/bun_crud\"' > .env && bunx prisma generate"
 }
