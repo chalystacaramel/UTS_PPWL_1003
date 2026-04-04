@@ -8,7 +8,7 @@ datasource db {
 }
 
 model Mahasiswa {
-  id   Int    @id @default(autoincrement())
-  nama String
-  nim  String
+  id    Int     @id @default(autoincrement())
+  nama  String
+  nim   String  @unique
 }
