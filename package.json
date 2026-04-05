@@ -1,22 +1,19 @@
 {
-  "name": "uts_ppwl_1003",
-  "module": "index.ts",
-  "type": "module",
-  "private": true,
-  "devDependencies": {
-    "@types/bun": "latest"
-  },
-  "peerDependencies": {
-    "typescript": "^5"
+  "name": "uts-ppwl-1003",
+  "version": "1.0.0",
+  "main": "src/app.js",
+  "scripts": {
+    "start": "bun src/app.js",
+    "dev": "bunx prisma@6 generate && bunx prisma@6 migrate dev --name init && bun src/app.js",
+    "migrate": "bunx prisma@6 migrate dev"
   },
   "dependencies": {
     "@prisma/client": "6",
-    "autoprefixer": "^10.4.27",
+    "@types/bun": "^1.1.0",
     "ejs": "^5.0.1",
-    "hono": "^4.12.10",
-    "mysql2": "^3.20.0",
-    "postcss": "^8.5.8",
-    "prisma": "6",
-    "tailwindcss": "3.4.17"
+    "hono": "^4.12.10"
+  },
+  "devDependencies": {
+    "prisma": "6"
   }
 }
